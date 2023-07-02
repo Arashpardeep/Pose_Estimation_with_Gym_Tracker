@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+    body{
+        font-family: 'Baloo Bhai 2', cursive;
+        background-image: linear-gradient(45deg, rgb(6, 44, 58), red, teal, mediumvioletred, darkgreen, hotpink, rgb(6, 44, 58));
+        background-size: 500%;
+        background-position: left;
+        animation-name: myanim;
+        animation-duration: 30s;
+        animation-iteration-count: infinite;
+        animation-delay: 0s;
+        animation-timing-function: steps(50, jump-none);
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+        color: white;
+        transition: background-position 1s;
+        
+    }
+
+    @keyframes myanim{
+        0%{
+            background-position: left;
+        }
+        20%{
+            background-position: left center;
+        }
+        40%{
+            background-position: center;
+        }
+        60%{
+            background-position: right center;
+        }
+        80%{
+            background-position: right;
+        }
+        100%{
+            background-position: left;
+        }
+    }
+
+    .header button a{
+        text-decoration: none;
+        color: white;
+    }
+
+    .left{
+        display: inline-block;
+        /* border: 2px solid red; */
+        position: absolute;
+        left: 30px;
+        top: 20px;
+    }
+
+    .left img{
+        width: 100px;
+        padding: 0px 35px;
+    }
+
+    .left a div{
+        line-height: 20px;
+        font-size: 18px;
+        width: 200px;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+    }
+
+    .left a div:hover{
+        color: dodgerblue;
+        text-decoration: underline;
+    }
+
+    .mid{
+        display: block;
+        width: 40%;
+        margin: 35px 500px;
+        /* border: 2px solid yellow; */
+    }
+
+    .right{
+        display: inline-block;
+        /* border: 2px solid green; */
+        position: absolute;
+        right: 34px;
+        top: 35px;
+    }
+
+    .navbar{
+        display: inline-block;
+    }
+
+    .navbar li{
+        display: inline-block;
+        font-size: 20px;
+    }
+
+    .navbar li a{
+        color: white;
+        text-decoration: none;
+        padding: 34px 23px;
+    }
+
+    .navbar li a:hover, .navbar li a.active{
+        color: dodgerblue;
+        text-decoration: underline;
+    }
+
+    .btn{
+        font-family: 'Baloo Bhai 2', cursive;
+        margin: 10px 9px;
+        padding: 4px 14px;
+        color:white;
+        background-color: black;
+        border: 2px solid grey;
+        border-radius: 10px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    .btn:hover{
+        background-color: darkolivegreen;
+    }
+    
+    .blog .title{
+        text-align: center;
+    }
+
+    .blog .content{
+        margin: 25px;
+    }
+
+    .blog h1{
+        font-size: 45px;
+    }
+
+    .blog h2{
+        font-size: 30px;
+    }
+
+    .blog h3{
+        font-size: 25px;
+    }
+
+    .blog h4{
+        font-size: 20px;
+    }
+
+    .blog p{
+        font-size: 16px;
+    }
+
+    .blog img{
+        width: 600px;
+        height: 400px;
+        margin-left: 28%;
+        margin-right: 28%;
+    }
+    
+</style>
+<body>
+    <header class="header">
+        <!-- Left box for logo  -->
+        <div class="left">
+            <a href="{% url 'index' %}">
+                <img src="static/img/logo.jpg" alt="error">
+                <div>Pose Estimation System with a Gym Tracker</div>
+            </a>
+        </div>
+        <!-- Mid box for navbar -->
+        <div class="mid">
+           <ul class="navbar">
+               <li><a href="{% url 'index' %}">Home</a></li>
+               <li><a href="{% url 'blog' %}" class="active">Blog</a></li>
+               <li><a href="{% url 'landmarks' %}">Landmarks</a></li>
+           </ul>
+        </div>
+        <!-- Right box for buttons -->
+        <div class="right">
+            <button class="btn"><a href="/profile">{{username}}</a></button>
+            <button class="btn"><a href="/signout">Logout</a></button>
+        </div>
+    </header>
+    <div class="blog">
+        <div class="title">
+            <h1>Revolutionizing Fitness</h1>
+            <h2>The Power of Pose Estimation and Gym Tracking with Mediapipe</h2>
+        </div>
+        <div class="content">
+            <h3>Introduction:</h3>
+            <p>In recent years, technology has made significant strides in transforming the fitness landscape. One exciting development is the fusion of pose estimation and gym tracking using Mediapipe, a powerful framework developed by Google. This innovative system holds the potential to revolutionize how we track, analyze, and optimize our workouts. In this blog, we'll explore the remarkable capabilities of pose estimation and gym tracking with Mediapipe, and how it can elevate your fitness journey to new heights.</p>
+            <img src="static/img/sample1.png" alt="error">
+            <ol>
+                <li>
+                    <h4>Understanding Pose Estimation:</h4>
+                    <p>Pose estimation, at its core, is the process of determining the body's skeletal structure from images or videos. With the advanced computer vision algorithms of Mediapipe, this technology can accurately detect key joints and reconstruct the body's posture and movements in real-time. This provides users with instant feedback on their form, helping them refine their technique and maximize the effectiveness of their workouts.</p>
+                </li>
+                <li>
+                    <h4>Seamlessly Integrating Gym Tracking:</h4>
+                    <p>Mediapipe takes fitness tracking to the next level by seamlessly integrating gym tracking capabilities. By leveraging sensors and wearable devices such as smartwatches, fitness bands, and heart rate monitors, the system captures vital workout metrics. This integration allows users to monitor their heart rate, track calories burned, count reps, and sets, enabling a comprehensive analysis of their performance.</p>
+                </li>
+                <li>
+                    <h4>Personalized Workouts and Progress Tracking:</h4>
+                    <p>One of the most powerful aspects of this system is its ability to deliver personalized workouts and track progress. By analyzing body posture and movements, Mediapipe can tailor workouts to individual needs and goals. It provides exercise recommendations, suggests modifications, and even generates personalized training plans. Progress tracking features allow users to monitor their performance over time, set goals, and view detailed analytics, empowering them to make data-driven decisions and achieve their fitness objectives.</p>
+                </li>
+                <img src="static/img/sample2.jpg" alt="error">
+                <li>
+                    <h4>Enhanced Safety and Injury Prevention:</h4>
+                    <p>Mediapipe's pose estimation technology helps promote safer workouts by alerting users to potential injury risks. Incorrect movements or excessive strain on specific joints can be detected, providing real-time feedback to help users maintain proper form and reduce the risk of injury. This proactive approach to safety ensures that your fitness journey remains injury-free.</p>
+                </li>
+                <li>
+                    <h4>Virtual Coaching and Gamified Experiences:</h4>
+                    <p>Trainers and coaches can leverage the power of pose estimation and gym tracking with Mediapipe to offer virtual coaching sessions. They can remotely analyze clients' movements, provide personalized feedback, and track progress, regardless of geographical limitations. Additionally, the integration of gamification elements makes workouts more engaging and enjoyable, motivating users to stay committed to their fitness goals.</p>
+                </li>
+                <li>
+                    <h4>Multi-platform Compatibility:</h4>
+                    <p>Mediapipe's versatility extends to its compatibility with various platforms, including smartphones, tablets, and computers. This flexibility ensures accessibility for users across different devices, enabling them to track their workouts conveniently and seamlessly transition between platforms.</p>
+                </li>
+                <img src="static/img/sample3.jpg" alt="error">
+            </ol>
+            <h3>Conclusion:</h3>
+            <p>The fusion of pose estimation and gym tracking with Mediapipe represents a groundbreaking advancement in fitness technology. By harnessing the power of accurate motion analysis and comprehensive workout tracking, this system empowers users to optimize their workouts, monitor their progress, and prevent injuries. Whether you're an athlete seeking peak performance, a fitness enthusiast striving for better form, or a trainer looking for innovative coaching tools, Mediapipe's pose estimation system with gym tracking is a game-changer. Embrace this technology and unlock your full fitness potential today!</p>
+        </div>
+    </div>
+    
+</body>
+</html>

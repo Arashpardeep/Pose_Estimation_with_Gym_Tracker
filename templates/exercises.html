@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor Exercises</title>
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family: "Poppins", "Sans Serif";
+    }
+
+    body{
+        padding: 25px;
+        background: linear-gradient(90deg, black, white);
+    }
+
+    .left{
+        display: inline-block;
+        /* border: 2px solid red; */
+        position: absolute;
+        left: 30px;
+        top: 20px;
+    }
+
+    .left img{
+        width: 170px;
+        padding: 0px 35px;
+    }
+
+    .left a div{
+        line-height: 20px;
+        font-size: 18px;
+        width: 200px;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+    }
+
+    .left a div:hover{
+        color: dodgerblue;
+        text-decoration: underline;
+    }
+
+    .cambut{
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+        height: 80px;
+        font-family: 'Baloo Bhai 2', cursive;
+        font-size: 25px;
+        padding: 25px;
+        color:white;
+        background-color: rgb(164, 10, 10);
+        border: 2px solid grey;
+        border-radius: 40px;
+        cursor: pointer;
+        margin: 40px;
+        align-items: center;
+    }
+
+    .cambut: hover{
+        transform: scale(1.5);
+    }
+
+    .cambut a{
+        color: white;
+        text-decoration: none;
+    }
+</style>
+<body>
+    <div class="left">
+        <a href="{% url 'index' %}">
+            <img src="static/img/logo.jpg" alt="error">
+            <div>Pose Estimation System with a Gym Tracker</div>
+        </a>
+    </div>
+    <h1 align="center"> Which exercise you want to monitor ?</h1>
+    <div class="exercises" align="center">
+        <button class="cambut" type="submit" onclick = "location.href='{% url 'webcam' %}'"><a href="/bicep">Monitor Bicep Curls</a></button>
+        <button class="cambut" type="submit" onclick = "location.href='{% url 'squat' %}'"><a href="/squat">Monitor Squats</a></button>
+        <button class="cambut" type="submit" onclick = "location.href='{% url 'pushup' %}'"><a href="/pushup">Monitor Push Ups</a></button>
+        <button class="cambut" type="submit" onclick = "location.href='{% url 'lat' %}'"><a href="lat">Monitor Lat Pull Down</a></button>
+        <button class="cambut" type="submit" onclick = "location.href='{% url 'shoulder' %}'"><a href="/shoulder">Monitor Shoulder Press</a></button>
+    </div>
+</body>
+</html>
